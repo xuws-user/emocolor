@@ -1,5 +1,5 @@
 # emocolor
-<h4>hWe evaluated the validity and generality of our computational models . 
+<h4>We evaluated the validity and generality of our computational models . 
 The results show that our method enables intuitive emotion control of 
 palette design and provides a starting point to produce a variety of 
 affectively  congruent color palettes.</h4>
