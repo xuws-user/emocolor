@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palettailor</title>
+  <link rel="shortcut icon" href="/static/png/weichat.jpg">
+
+  <script type="text/javascript" src="/static/js/lib/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/lib/d3.v4.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="/static/css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="/static/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <!-- toggle javascripts -->
+  <script src="/static/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.nicescroll.js"></script>
+  <script src="/static/js/jquery.scrollTo.min.js"></script>
+  <script src="/static/js/scripts.js"></script>
+  <!-- bootstrap -->
+  <script src="/static/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RZZBZ64XPG');
+  </script>
+</head>
+
+<body style="background: rgb(237,237,237)">
+  <!-- container section start -->
+  
+  <section id="container" >
+    <header class="header dark-bg" style="background: rgb(50,102,203)">
+
+
+      <!--logo start-->
+        <h2 style="float: left;margin-top: 0px;"><img src="/static/6.png"></h2>
+      <!--logo end-->
+
+      <div style="float: left;margin-left: 50px;width: 200px;">
+        <ul class="nav top-menu">
+          <!-- load example data start -->
+            <table><th>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <h2 style="float: left;margin-top: 10px;"><img src="/static/7.jpg" style="width:90px ;height:40px" ></h2>
+            </a>
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+              <li>
+                <p style="background:rgb(125,157,221)">Load Example Data</p>
+              </li>
+              <li>
+                <a onclick="loadata(0)"><button type="submit" id="Spatial_Data" style="border:none">
+                  <div class="task-info">
+                    <div class="desc">
+                      Spatial Data
+
+                    </div>
+                  </div></button>
+                </a>
+              </li>
+              <li>
+                <a onclick="loadata(1)"><button type="submit" id="Wordle" style="border:none">
+                  <div class="task-info">
+                    <div class="desc">
+                      Wordle
+                    </div>
+                  </div></button>
+                </a>
+              </li>
+                <li>
+                <a onclick="loadata(2)"><button type="submit" id="Inforgraphics" style="border:none">
+                  <div class="task-info">
+                    <div class="desc">
+
+                     Painting
+                    </div>
+                  </div></button>
+                </a>
+              </li>
+              <li>
+                <a onclick="loadata(3)"><button type="submit" id="Painting" style="border:none">
+                  <div class="task-info">
+                    <div class="desc">
+                      Sunburst Chart
+                    </div>
+                  </div></button>
+                </a>
+              </li>
+            </ul>
+          </li>
+            </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <a id="data1202" href="" download="" ><h2 style="float: left;margin-top: 10px;"><img src="/static/4.jpg" style="width:90px ;height:40px" ></h2></a>
+            </a>
+          </li>
+                    </th>
+          <!-- load example data end -->
+          <!-- load data start-->
+                </table>
+        </ul>
+
+      </div>
+        <!-- notificatoin dropdown end-->
+
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse" style="background: rgb(125,157,221)">
+
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+
+                  <br>
+
+                <h4><div style="color: white">&nbsp;&nbsp;&nbsp;Palette&nbsp;&nbsp;&nbsp;&nbsp;Length&nbsp;:&nbsp;&nbsp;&nbsp;
+                  <select id="mySelect" onchange="myFunction()">
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                 </select>
+                </div></h4>
+                <table>
+
+                    <tr style="height: 50px"><button type="submit" style="border-style:none" onclick="change_color(0)"><img src="" id="img0" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px"><button type="submit" style="border-style:none"  onclick="change_color(1)"><img src="" id="img1" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px"><button type="submit" style="border-style:none" onclick="change_color(2)"><img src="" id="img2" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(3)"><img src="" id="img3" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(4)"><img src="" id="img4" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(5)"><img src="" id="img5" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(6)"><img src="" id="img6" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(7)"><img src="" id="img7" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(8)"><img src="" id="img8" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(9)"><img src="" id="img9" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(10)"><img src="" id="img10" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(11)"><img src="" id="img11" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(12)"><img src="" id="img12" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(13)"><img src="" id="img13" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(14)"><img src="" id="img14" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(15)"><img src="" id="img15" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(16)"><img src="" id="img16" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(17)"><img src="" id="img17" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(18)"><img src="" id="img18" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(19)"><img src="" id="img19" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(20)"><img src="" id="img20" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(21)"><img src="" id="img21" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(22)"><img src="" id="img22" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px">&nbsp;<button type="submit" style="border-style:none" onclick="change_color(23)"><img src="" id="img23" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di0" type="submit" style="border-style:none" onclick="change_color(24)"><img src="" id="img24" onerror="xianshi(0)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di1" type="submit" style="border-style:none" onclick="change_color(25)"><img src="" id="img25" onerror="xianshi(1)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di2" type="submit" style="border-style:none" onclick="change_color(26)"><img src="" id="img26" onerror="xianshi(2)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di3" type="submit" style="border-style:none" onclick="change_color(27)"><img src="" id="img27" onerror="xianshi(3)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di4" type="submit" style="border-style:none" onclick="change_color(28)"><img src="" id="img28" onerror="xianshi(4)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    <tr style="height: 50px" >&nbsp;<button id="di5" type="submit" style="border-style:none" onclick="change_color(29)"><img src="" id="img29" onerror="xianshi(5)" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="190px" ></button></tr>
+                    </table>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+
+    </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12" >
+              <h4><strong>Exploration View</strong></h4>
+                <div id="renderDiv"  style="height:450px;width:100%;overflow-x:scroll;overflow-y:hidden;white-space: nowrap;background: white"><table>
+                    <div style="height: 10px"></div>
+                    <td>Control Panel
+                        <div  style="position: relative;background-size:100%;background-image: url(/static/png/tu/a-v.png);width:420px; height:400px" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragend="dorpwanle(event)">
+                            <div  id="xws001" style="z-index:99999;position: relative;" draggable="true">
+                                <img  id="xws0011" style="visibility:hidden" src="/static/png/tu/xingxing.jpg" width=20 height=20 draggable="true">
+                            </div>
+                            <div id="xws2333" style="z-index:99999;position: relative;">
+                                <img id="xws23331" style="visibility:hidden" id="xws1112" width=20 height=20 src="/static/png/tu/xingxing_1.jpg">
+                            </div>
+                            </div></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td>Input Panel
+                      <br>
+                      <img onerror="xianshi(7)" src="" width="400" height="350" id="showing_space" >
+                      <br>
+                      <img onerror="xianshi(8)" src="" width="400" height="50" id="showing_space4" >
+                  </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        Output Panel
+                        <br>
+                        <img onerror="xianshi(9)" src="" width="400" height="350" id="showing_space1" >
+                        <br>
+                        <img onerror="xianshi(10)" src="" width="400" height="50" id="showing_space5" >
+                    </td>
+                </table>
+
+                </div>
+
+
+
+
+
+
+            <!-- List starts -->
+            <div class="col-lg-9 col-md-9" >
+                <h4><strong>Parameter Panel</strong></h4>
+                <ul style="padding-left: 0px;color: black;background: white;height: 300px" >
+                    <h4><strong>Model choose:</strong></h4>
+                  Model of&nbsp; 3-Color Palette:&nbsp;&nbsp;<button type="submit"  id="data0" onclick="change_model(3)" style="background: rgb(220,220,220);width: 20px; height: 20px; border-radius:50%;border: none"></button>&nbsp;
+                  Model of&nbsp; 5-Color Palette:&nbsp;&nbsp;<button type="submit"  id="data1" onclick="change_model(5)" style="background: rgb(220,220,220);width: 20px; height: 20px; border-radius:50%;border: none"></button>&nbsp;
+                  Model of&nbsp; 7-Color Palette:&nbsp;&nbsp;<button type="submit"  id="data2" onclick="change_model(7)" style="background: rgb(220,220,220);width: 20px; height: 20px; border-radius:50%;border: none"></button>&nbsp;
+                  Model of 10-Color Palette:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  id="data3" onclick="change_model(10)" style="background: rgb(220,220,220);width: 20px; height: 20px; border-radius:50%;border: none"></button>&nbsp;
+                  <br>
+                    <br>
+                  <h4><strong>Locked:</strong></h4><table>
+                  <td style="height: 50px"><button id="xi0" type="submit" style="visibility: hidden;" onclick="change_one_color(0)"><img src="" id="ximg0" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi1" type="submit"  style="visibility: hidden;" onclick="change_one_color(1)"><img src="" id="ximg1" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi2" type="submit"  style="visibility: hidden;" onclick="change_one_color(2)"><img src="" id="ximg2" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi3" type="submit"  style="visibility: hidden;" onclick="change_one_color(3)"><img src="" id="ximg3" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi4" type="submit"  style="visibility: hidden;" onclick="change_one_color(4)"><img src="" id="ximg4" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi5" type="submit"  style="visibility: hidden;" onclick="change_one_color(5)"><img src="" id="ximg5" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi6" type="submit"  style="visibility: hidden;" onclick="change_one_color(6)"><img src="" id="ximg6" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi7" type="submit"  style="visibility: hidden;" onclick="change_one_color(7)"><img src="" id="ximg7" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi8" type="submit"  style="visibility: hidden;" onclick="change_one_color(8)"><img src="" id="ximg8" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                    <td>&nbsp;&nbsp;</td><td style="height: 50px"><button id="xi9" type="submit"  style="visibility: hidden;" onclick="change_one_color(9)"><img src="" id="ximg9" style="height: 40px" class="img-thumbnail" alt="Responsive image" height="40px" width="40px" ></button></td>
+                  </table>
+                   <br>
+                  <h4><strong>Optimization Weight:</strong></h4>
+                  L:<select id="mySelect_L" onchange="mySelect_L()">
+                  <option value="100">100</option>
+                  <option value="300">300</option>
+                  <option value="500">500</option>
+                  <option value="700">700</option>
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  max_stay_counter:
+                  <select id="mySelect_max_stay_counter" onchange="mySelect_max_stay_counter()">
+                    <option value="100">100</option>
+                    <option value="300">300</option>
+                    <option value="500">500</option>
+                    <option value="700">700</option>
+                  </select>
+           </ul>
+            </div>
+            <div class="col-md-3 ">
+              <!-- List starts -->
+
+                <h4><strong>History</strong></h4>
+                   <ul style="padding-left: 0;color: black;background: white;height: 300px" >
+                <table>
+
+                  <tr>
+                      <a id="xws0000101" download=""><div id="xws0000111" style="visibility : hidden" ><img  id="xws0000121" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000102"  download=""><div id="xws0000112" style="visibility : hidden"><img  id="xws0000122" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000103"  download=""><div id="xws0000113" style="visibility : hidden"><img  id="xws0000123" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000104" download=""><div id="xws0000114" style="visibility : hidden" ><img  id="xws0000124" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000105"  download=""><div id="xws0000115" style="visibility : hidden"><img  id="xws0000125" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000106"  download=""><div id="xws0000116" style="visibility : hidden"><img  id="xws0000126" style=""  src ="xws1" height="60px" width="300px"></div></a>
+                      <a id="xws0000107"  download=""><div id="xws0000117" style="visibility : hidden"><img  id="xws0000127" style=""  src ="xws1" height="60px" width="300px"></div></a>
+
+                  </tr>
+
+                </table>
+                   </ul>
+            </div>
+          </div>
+      </div>
+
+<div id="data1124" value="1"></div>
+<div id="data1125" value="0"></div>
+<div id="data1126" value="0"></div>
+    <!--main content end-->
+
+         </section>
+       </section>
+
+  </section>
+  <!-- container section start -->
+
+
+
+
+</body>
+<script>
+function xianshi(xxx){
+    if (xxx <6){
+    xioashi123= document.getElementById("di"+xxx);
+    xioashi123.style.display='none';}
+    else{
+        if (xxx === 7) {
+            xioashi123 = document.getElementById("showing_space");
+            xioashi123.style.visibility = "hidden";
+        }
+       if (xxx === 8){
+            xioashi123= document.getElementById("showing_space4");
+            xioashi123.style.visibility="hidden";
+        }
+        if (xxx === 9){
+            xioashi123= document.getElementById("showing_space1");
+            xioashi123.style.visibility="hidden";
+        }
+        if (xxx === 10){
+            xioashi123= document.getElementById("showing_space5");
+            xioashi123.style.visibility="hidden";
+        }
+    }
+
+}
+</script>
+<script>
+    function loadata(xxx){
+        let data = {"now_image_is1": xxx,
+                             };
+        $.ajax({
+                                        url: '/now_image_is12',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+     })
+    }
+</script>
+<script>
+    function downn(choose){
+
+    const xwsa = document.createElement('xwsa') // 创建一个a标签
+        if (choose === 1){
+    const xws222 = document.getElementById("showing_space5");
+    xwsa.href =  xws222.src// a标签的src属性赋值
+            }
+    else {
+    const xws222 = document.getElementById("xws00"+ str(choose)+"1");
+    xwsa.href =  xws222.src
+        }
+    xwsaa.download = config.fileName // a标签的download属性赋值
+    document.body.appendChild(xwsa) // 添加a标签到body下
+    xwsa.click() // 触发a标签点击事件
+    document.body.removeChild(xwsa) //  完成后删除a标签
+
+    }
+</script>
+<script>
+    function change_one_color(xxx){
+        let data = {"shuo": xxx,
+                             };
+        let ximg = document.getElementById("ximg"+xxx);
+        ximg.src = "/static/load/1.png";
+        ximg.style.opacity= "0.8"
+        $.ajax({
+                                        url: '/load1',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data)
+     })
+    }
+</script>
+<script>
+    let js_data = document.getElementById('dataid').getAttribute('d');
+    let showing_space = document.getElementById("showing_space");
+    showing_space.src = js_data;
+</script>
+
+<script>
+function shangchuanyi() {
+    let nooo1 = document.getElementById("Spatial_Data");
+    document.noo1.submit();
+
+}
+</script>
+
+<script>
+    function kongbai(){
+        let btn1 = document.getElementById("xws1112");
+        btn1.style.display='none';
+    }
+</script>
+<script>  // our explessful
+let btn = document.getElementById("Spatial_Data");
+let btn1 = document.getElementById("Wordle");
+let btn2 = document.getElementById("Inforgraphics");
+let btn3 = document.getElementById("Painting");
+let showing_space = document.getElementById("showing_space");
+btn.onclick =function(){
+    showing_space.src = "/static/png/Spatial_Data.png";
+    }
+    btn1.onclick =function(){
+    showing_space.src = "/static/png/data_png/5/0.png";
+    }
+    btn2.onclick =function(){
+
+    }
+    btn3.onclick =function(){
+    }
+</script>
+
+<script>
+    function changeSlider(){
+        let value = document.getElementById("slider_1").value;
+        let xxxxx = document.getElementById("slider_1_label").innerText;
+        let label = document.getElementById("slider_1_label");
+        xxxxx = xxxxx +value;
+        label.innerHTML=xxxxx;
+    }
+</script>
+
+
+<script>
+
+    function allowDrop(ev) {
+    ev.preventDefault();
+}
+function  dorpwanle(event){
+
+    let e = event || window.event;
+    let xws001 = document.getElementById("xws001");
+    let xws0011 = document.getElementById("xws0011");
+    xws001.style.visibility = "visible";
+    xws0011.style.visibility = "visible";
+    var zhang_tai_yi = document.getElementById("data1125")
+    var now_xxx = xws001.style.left;
+    var now_yyy = xws001.style.top;
+    xws001.style.left = e.clientX-245 + "px";
+    xws001.style.top = e.clientY-165 + "px";
+    xws001.style.zIndex = 99;
+    if (zhang_tai_yi.value === 1){
+        var changbexws = document.getElementById("xws2333");
+        var changbexws1 = document.getElementById("xws23331");
+        changbexws1.style.visibility = "visible";
+        changbexws.style.left = now_xxx;
+        changbexws.style.top = (parseInt(now_yyy)-20)+'px';
+        zhang_tai_yi.value = 1;
+        changbexws.style.zIndex = "99999";
+        zhang_tai_yi.value =0;
+    }
+
+
+    let data = {"ex_new": (e.clientX-286)/295,
+                "ey_new": (-e.clientY+502)/295,
+                "ans": document.getElementById('data1124').value
+                             };
+    console.log(data);
+     $.ajax({
+                                        url: '/new_ex_ey',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+                                        success: function ([ex, ey, image_name]){
+                                            ex = 41 + 295*ex;
+                                            ey = 337- 295*ey;
+                                        var img_center = document.getElementById("showing_space1");
+                                        img_center.style.visibility = "visible";
+                                        img_center.src = "static/photo_center/"+image_name+".jpg";
+                                        var x111222 = document.getElementById("data1202");
+                                        x111222.download = "static/photo_center/"+image_name+".jpg";
+                                        x111222.href = "static/photo_center/"+image_name+".jpg";
+                                        var xws11121 = document.getElementById("xws11121");
+                                        var xws111211 = document.getElementById("showing_space5");
+                                        xws111211.style.visibility = "visible";
+                                        xws111211.src = "static/palette_new/"+image_name+".jpg";
+
+                                        var num =1;
+                                        for (let i = 1; i < 8; i++) {
+                                           //     <a id="xws0000101" download=""><div id="xws0000111" style="visibility : hidden" ><img  id="xws0000121" style=""  src ="xws1" height="50px" width="250px"></div></a>
+
+                                            const a_now = document.getElementById('xws000012'+i);
+                                                if (a_now.src !== 'http://127.0.0.1:5000/xws1'){
+                                                    num = num + 1;
+                                                }
+                                       }
+                                        var num1 = num;
+                                        for (let i = 1; i < num1; i++) {
+                                           //     <a id="xws0000101" download=""><div id="xws0000111" style="visibility : hidden" ><img  id="xws0000121" style=""  src ="xws1" height="50px" width="250px"></div></a>
+                                                if(num === 8){
+                                                    num = 7;
+                                                }
+                                                var a_now = document.getElementById('xws000010'+num);
+                                                var div_now = document.getElementById('xws000011'+num);
+                                                div_now.style.visibility = "visible";
+                                                var img_now = document.getElementById('xws000012'+num);
+
+                                                var a_now1 = document.getElementById('xws000010'+(num-1));
+                                                img_now.src = document.getElementById('xws000012' + (num - 1)).src;
+                                                a_now.download = a_now1.download
+                                                a_now.href = a_now1.href
+                                                num = num - 1;
+                                        }
+                                        var a_now11 = document.getElementById('xws0000101');
+                                        var img_now11 = document.getElementById('xws0000121');
+                                        img_now11.src = "static/palette_new/"+image_name+".jpg";
+                                        a_now11.download = "static/palette_new/"+image_name+".jpg";
+                                        a_now11.href = "static/palette_new/"+image_name+".jpg";
+                                        var div_now11 = document.getElementById('xws0000111');
+                                        div_now11.style.visibility = "visible";
+                                        }
+     })
+}
+
+function drop(ev) {
+    var box=document.getElementById('div1');
+    //alert(box.getBoundingClientRect().top);         // 元素上边距离页面上边的距离
+    //alert(box.getBoundingClientRect().right);       // 元素右边距离页面左边的距离
+    //alert(box.getBoundingClientRect().bottom);      // 元素下边距离页面上边的距离
+    //alert(box.getBoundingClientRect().left);
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+
+}
+</script>
+
+<script>
+   function change_color(xxx){
+       for(i = 0; i < 30; i++){
+           var o1Img = document.getElementById("img"+i);
+           o1Img.style.borderStyle ="none";
+       }//全部去框
+      var oImg = document.getElementById("img"+xxx);
+      oImg.style.borderStyle ="dashed";
+      oImg.style.borderWidth ="5px";
+      oImg.style.borderColor ="black";
+     let data = {
+                            "number": xxx,
+                             "number_of_list": document.getElementById("mySelect").value,
+                             "ans": document.getElementById('data1124').value
+                             };
+     console.log(data)
+     $.ajax({
+                                        url: '/new_deplete',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+                                        success: function ([ex, ey, image_name,data_Will_change_by3_1]){
+                                            let img_center;
+                                            for (let i_data_Will_change_by3_1 = 0; i_data_Will_change_by3_1 < data_Will_change_by3_1.length; i_data_Will_change_by3_1++) {
+                                                let xi = document.getElementById("xi"+i_data_Will_change_by3_1);
+                                                xi.style.visibility = "visible";
+                                                xi.style.background = "rgb("+data_Will_change_by3_1[i_data_Will_change_by3_1][0]+","+data_Will_change_by3_1[i_data_Will_change_by3_1][1]+","+data_Will_change_by3_1[i_data_Will_change_by3_1][2]+")";
+                                                let ximg = document.getElementById("ximg"+i_data_Will_change_by3_1);
+                                                ximg.src = "/static/load/2.png";
+                                                ximg.style.opacity= "0.0"
+                                            }
+
+                                            img_center = document.getElementById("showing_space");
+                                            img_center.style.visibility = "visible";
+                                            img_center.src = "static/photo_center/"+image_name+".jpg";
+                                            ex = 41 + 295*ex;
+                                            ey = 337- 295*ey;
+                                            var ex_ey= document.getElementById("xws001");
+                                            var ex_ey1= document.getElementById("xws0011");
+                                            ex_ey1.style.visibility = "visible";
+                                            ex_ey.style.left =ex + "px";
+                                            ex_ey.style.top = ey+ "px";
+                                            ex_ey.style.zIndex = "999";
+                                            //ex_ey.style.position = relative;
+                                            //ex_ey.style.draggable = true;
+                                            var img_center123 = document.getElementById("showing_space4");
+                                            img_center123.style.visibility = "visible";
+                                            var yyy = document.getElementById("mySelect").value;
+                                            img_center123.src = "/static/png/data_png/"+yyy+"/"+xxx+".jpg";
+                                            var zhang_tai_yi = document.getElementById("data1125");
+                                            zhang_tai_yi.value = 1;
+                                        }
+     })
+   }
+</script>
+<script>
+    function change_model(xxx){
+        let data = {
+                 "change_model": xxx,
+                 };
+     console.log(data)
+     $.ajax({url: '/change_model12',
+         type: 'post',
+         dataType: 'json',
+         headers: {"Content-Type": "application/json;charset=utf-8"},
+         data:JSON.stringify(data),
+         success: function ([ans]){
+             for (let i = 0; i < 4; i++) {
+                  let oImg123 = document.getElementById("data"+i);
+                  oImg123.style.background = "rgb(220,220,220)";
+                  oImg123.style.borderStyle ="none";
+             }
+             if (ans === 3){
+                 ans = 0;
+             }
+             if (ans === 5){
+                 ans = 1;
+             }
+             if (ans === 7){
+                 ans = 2;
+             }
+             if (ans === 10){
+                 ans = 3;
+             }
+             let oImg123 = document.getElementById("data"+ans);
+             oImg123.style.background = "rgb(218,227,243)";
+             oImg123.style.borderStyle ="ridge";
+             oImg123.style.borderWidth ="2px";
+             oImg123.style.borderColor ="rgb(218,227,243)";
+             }
+    }
+    )
+    }
+
+</script>
+<script>
+   function change_color1(xxx){
+     let data = {
+                 "number": xxx,
+                 };
+     console.log(data)
+     $.ajax({
+                                        url: '/change_chan_shu',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+                                        success: function ([ans]){
+                                            var oImg123 = document.getElementById("data"+xxx);
+                                            if(ans === 1){
+                                                oImg123.style.background = "rgb(220,220,220)";
+                                                oImg123.style.borderStyle ="none";
+                                            }
+                                            else{
+                                                oImg123.style.background = "rgb(218,227,243)";
+                                                oImg123.style.borderStyle ="ridge";
+                                                oImg123.style.borderWidth ="2px";
+                                                oImg123.style.borderColor ="rgb(218,227,243)";
+
+                                            }
+                                        }
+     })
+   }
+</script>
+<script>
+    function mySelect_L() {
+        var mySelect_L = document.getElementById("mySelect_L").value;
+        let data = {
+                 "mySelect_L": mySelect_L,
+                 };
+        console.log(data)
+     $.ajax({
+                                        url: '/change_l',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+     })
+    }
+</script>
+<script>
+    function mySelect_max_stay_counter(){
+        var max_stay_counter = document.getElementById("mySelect_max_stay_counter").value;
+        let data = {
+                 "max_stay_counter": max_stay_counter,
+                 };
+        console.log(data)
+     $.ajax({
+                                        url: '/change_max_stay_counter',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        headers: {"Content-Type": "application/json;charset=utf-8"},
+                                        data:JSON.stringify(data),
+     })
+    }
+</script>
+<script>
+    function myFunction() {
+       var x = document.getElementById("mySelect").value;
+       var oImg = document.getElementById("img0");
+      var ooImg = document.getElementById("img1");
+      var oooImg = document.getElementById("img2");
+      var ooooImg = document.getElementById("img3");
+      var oooooImg = document.getElementById("img4");
+      var ooooooImg = document.getElementById("img5");
+      var oooooooImg = document.getElementById("img6");
+      var ooooooooImg = document.getElementById("img7");
+      var oooooooooImg = document.getElementById("img8");
+      var ooooooooooImg = document.getElementById("img9");
+      oImg.src = "/static/png/data_png/"+x+"/0.jpg";
+      ooImg.src = "/static/png/data_png/"+x+"/1.jpg";
+      oooImg.src = "/static/png/data_png/"+x+"/2.jpg";
+      ooooImg.src = "/static/png/data_png/"+x+"/3.jpg";
+      oooooImg.src = "/static/png/data_png/"+x+"/4.jpg";
+      ooooooImg.src = "/static/png/data_png/"+x+"/5.jpg";
+      oooooooImg.src = "/static/png/data_png/"+x+"/6.jpg";
+      ooooooooImg.src = "/static/png/data_png/"+x+"/7.jpg";
+      oooooooooImg.src = "/static/png/data_png/"+x+"/8.jpg";
+      ooooooooooImg.src = "/static/png/data_png/"+x+"/9.jpg";
+      var oooooooooooImg = document.getElementById("img10");
+      var ooooooooooooImg = document.getElementById("img11");
+      var oooooooooooooImg = document.getElementById("img12");
+      var ooooooooooooooImg = document.getElementById("img13");
+      var oooooooooooooooImg = document.getElementById("img14");
+      var ooooooooooooooooImg = document.getElementById("img15");
+      var oooooooooooooooooImg = document.getElementById("img16");
+      var ooooooooooooooooooImg = document.getElementById("img17");
+      var oooooooooooooooooooImg = document.getElementById("img18");
+      var ooooooooooooooooooooImg = document.getElementById("img19");
+      oooooooooooImg.src = "/static/png/data_png/"+x+"/10.jpg";
+      ooooooooooooImg.src = "/static/png/data_png/"+x+"/11.jpg";
+      oooooooooooooImg.src = "/static/png/data_png/"+x+"/12.jpg";
+      ooooooooooooooImg.src = "/static/png/data_png/"+x+"/13.jpg";
+      oooooooooooooooImg.src = "/static/png/data_png/"+x+"/14.jpg";
+      ooooooooooooooooImg.src = "/static/png/data_png/"+x+"/15.jpg";
+      oooooooooooooooooImg.src = "/static/png/data_png/"+x+"/16.jpg";
+      ooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/17.jpg";
+      oooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/18.jpg";
+      ooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/19.jpg";
+      var oooooooooooooooooooooImg = document.getElementById("img20");
+      var ooooooooooooooooooooooImg = document.getElementById("img21");
+      var oooooooooooooooooooooooImg = document.getElementById("img22");
+      var ooooooooooooooooooooooooImg = document.getElementById("img23");
+      var oooooooooooooooooooooooooImg = document.getElementById("img24");
+      var ooooooooooooooooooooooooooImg = document.getElementById("img25");
+      var oooooooooooooooooooooooooooImg = document.getElementById("img26");
+      var ooooooooooooooooooooooooooooImg = document.getElementById("img27");
+      var oooooooooooooooooooooooooooooImg = document.getElementById("img28");
+      var ooooooooooooooooooooooooooooooImg = document.getElementById("img29");
+      oooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/20.jpg";
+      ooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/21.jpg";
+      oooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/22.jpg";
+      ooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/23.jpg";
+      oooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/24.jpg";
+      ooooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/25.jpg";
+      oooooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/26.jpg";
+      ooooooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/27.jpg";
+      oooooooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/28.jpg";
+      ooooooooooooooooooooooooooooooImg.src = "/static/png/data_png/"+x+"/29.jpg";
+      for(i = 0; i < 30; i++){
+           var o1Img = document.getElementById("img"+i);
+           o1Img.style.borderStyle ="none";
+       }
+      for (let i_xi = 0; i_xi < 10; i_xi++) {
+        let xi = document.getElementById("xi"+i_xi);
+        xi.style.visibility = "hidden";
+    }
+      }
+
+
+</script>
+<script>
+  window.onload=function() {
+      var oImg = document.getElementById("img0");
+      var ooImg = document.getElementById("img1");
+      var oooImg = document.getElementById("img2");
+      var ooooImg = document.getElementById("img3");
+      var oooooImg = document.getElementById("img4");
+      var ooooooImg = document.getElementById("img5");
+      var oooooooImg = document.getElementById("img6");
+      var ooooooooImg = document.getElementById("img7");
+      var oooooooooImg = document.getElementById("img8");
+      var ooooooooooImg = document.getElementById("img9");
+      oImg.src = "/static/png/data_png/3/0.jpg";
+      ooImg.src = "/static/png/data_png/3/1.jpg";
+      oooImg.src = "/static/png/data_png/3/2.jpg";
+      ooooImg.src = "/static/png/data_png/3/3.jpg";
+      oooooImg.src = "/static/png/data_png/3/4.jpg";
+      ooooooImg.src = "/static/png/data_png/3/5.jpg";
+      oooooooImg.src = "/static/png/data_png/3/6.jpg";
+      ooooooooImg.src = "/static/png/data_png/3/7.jpg";
+      oooooooooImg.src = "/static/png/data_png/3/8.jpg";
+      ooooooooooImg.src = "/static/png/data_png/3/9.jpg";
+      var oooooooooooImg = document.getElementById("img10");
+      var ooooooooooooImg = document.getElementById("img11");
+      var oooooooooooooImg = document.getElementById("img12");
+      var ooooooooooooooImg = document.getElementById("img13");
+      var oooooooooooooooImg = document.getElementById("img14");
+      var ooooooooooooooooImg = document.getElementById("img15");
+      var oooooooooooooooooImg = document.getElementById("img16");
+      var ooooooooooooooooooImg = document.getElementById("img17");
+      var oooooooooooooooooooImg = document.getElementById("img18");
+      var ooooooooooooooooooooImg = document.getElementById("img19");
+      oooooooooooImg.src = "/static/png/data_png/3/10.jpg";
+      ooooooooooooImg.src = "/static/png/data_png/3/11.jpg";
+      oooooooooooooImg.src = "/static/png/data_png/3/12.jpg";
+      ooooooooooooooImg.src = "/static/png/data_png/3/13.jpg";
+      oooooooooooooooImg.src = "/static/png/data_png/3/14.jpg";
+      ooooooooooooooooImg.src = "/static/png/data_png/3/15.jpg";
+      oooooooooooooooooImg.src = "/static/png/data_png/3/16.jpg";
+      ooooooooooooooooooImg.src = "/static/png/data_png/3/17.jpg";
+      oooooooooooooooooooImg.src = "/static/png/data_png/3/18.jpg";
+      ooooooooooooooooooooImg.src = "/static/png/data_png/3/19.jpg";
+      var oooooooooooooooooooooImg = document.getElementById("img20");
+      var ooooooooooooooooooooooImg = document.getElementById("img21");
+      var oooooooooooooooooooooooImg = document.getElementById("img22");
+      var ooooooooooooooooooooooooImg = document.getElementById("img23");
+      var oooooooooooooooooooooooooImg = document.getElementById("img24");
+      var ooooooooooooooooooooooooooImg = document.getElementById("img25");
+      var oooooooooooooooooooooooooooImg = document.getElementById("img26");
+      var ooooooooooooooooooooooooooooImg = document.getElementById("img27");
+      var oooooooooooooooooooooooooooooImg = document.getElementById("img28");
+      var ooooooooooooooooooooooooooooooImg = document.getElementById("img29");
+      oooooooooooooooooooooImg.src = "/static/png/data_png/3/20.jpg";
+      ooooooooooooooooooooooImg.src = "/static/png/data_png/3/21.jpg";
+      oooooooooooooooooooooooImg.src = "/static/png/data_png/3/22.jpg";
+      ooooooooooooooooooooooooImg.src = "/static/png/data_png/3/23.jpg";
+      oooooooooooooooooooooooooImg.src = "/static/png/data_png/3/24.jpg";
+      ooooooooooooooooooooooooooImg.src = "/static/png/data_png/3/25.jpg";
+      oooooooooooooooooooooooooooImg.src = "/static/png/data_png/3/26.jpg";
+      ooooooooooooooooooooooooooooImg.src = "/static/png/data_png/3/27.jpg";
+      oooooooooooooooooooooooooooooImg.src = "/static/png/data_png/3/28.jpg";
+      ooooooooooooooooooooooooooooooImg.src = "/static/png/data_png/3/29.jpg";
+  }
+</script>
+
+
+
+<script type="text/javascript" src="/static/js/lib/d3.color.min.js"></script>
+<script type="text/javascript" src="/static/js/lib/c3.min.js"></script>
+
+<script type="text/javascript" src="/static/js/global.js"></script>
+<script type="text/javascript" src="/static/js/utils.js"></script>
+<script type="text/javascript" src="/static/js/lightnessFilter.js"></script>
+<script type="text/javascript" src="/static/js/dataLoader.js"></script>
+<script type="text/javascript" src="/static/js/distanceCalculator.js"></script>
+<script type="text/javascript" src="/static/js/optimizeFunc.js"></script>
+
+<script type="text/javascript" src="/static/js/index.js"></script>
+
+
+</html>
